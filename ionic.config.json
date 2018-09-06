@@ -1,0 +1,13 @@
+{
+  "name": "myApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "*/Country",
+      "proxyUrl": "http://countryapi.gear.host/v1/Country"
+    }
+  ],
+  "type": "ionic-angular"
+}

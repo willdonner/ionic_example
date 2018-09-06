@@ -1,0 +1,52 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Team
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+
+<h1>{{title}}</h1>
+<ion-list *ngFor = "let item of items">
+  <ion-item>
+    <ion-avatar item-left>
+      <img [src]="item.url">
+    </ion-avatar>
+    {{item.title}} 
+  </ion-item>
+</ion-list>
+</ion-content> -->
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        willdonner
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <!-- 显示列表 -->
+  <ion-list [virtualScroll]="lists">
+    <ion-item *virtualItem="let item" style="padding:10px">
+        <!-- <h3 style="padding: 10px;"> {{ item.id }}</h3>
+        <p style="padding: 30px 10px">{{ item.title }}</p> -->
+        <ion-avatar item-left>
+          <img [src]="item?.url">
+        </ion-avatar>
+        {{item.title}}
+    </ion-item>
+  </ion-list>
+
+  <!-- 上拉加载 -->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <!-- 下拉刷新 -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+  </ion-content>
